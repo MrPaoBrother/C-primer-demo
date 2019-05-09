@@ -15,6 +15,7 @@ String::String()
     str = new char[1];
     str[0] = '\0';
     obj_nums++;
+    std::cout << "default created now obj_nums:" << obj_nums << std::endl;
 }
 
 String::String(const char *s)
@@ -23,6 +24,7 @@ String::String(const char *s)
     str = new char[len + 1];
     std::strcpy(str, s);
     obj_nums++;
+    std::cout << "char* created now obj_nums:" << obj_nums << std::endl;
 }
 
 String::String(const String &s)
@@ -30,6 +32,7 @@ String::String(const String &s)
     len = s.len;
     str = new char[len + 1];
     std::strcpy(str, s.str);
+    std::cout << "&s created now obj_nums:" << obj_nums << std::endl;
     obj_nums++;
 }
 
@@ -37,6 +40,7 @@ String::~String()
 {
     delete[] str;
     obj_nums--;
+    std::cout << "deleted, now obj_nums:" << obj_nums << std::endl;
 }
 
 String &String::operator=(const String &s)
