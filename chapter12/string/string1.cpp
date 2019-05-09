@@ -14,6 +14,7 @@ String::String()
     len = 0;
     str = new char[1];
     str[0] = '\0';
+    // 或者str = nullptr
     obj_nums++;
     std::cout << "default created now obj_nums:" << obj_nums << std::endl;
 }
