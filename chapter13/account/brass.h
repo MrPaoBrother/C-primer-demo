@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+using std::cout;
+using std::endl;
 using std::string;
 
 class Brass
@@ -22,7 +24,7 @@ public:
     double Balance() const;
     // 查看账户信息虚方法
     virtual void ShowAcc() const;
-    virtual ~Brass() {}
+    virtual ~Brass() { cout << "delete Brass with balance:" << Balance() << endl; }
 };
 
 class BrassPlus : public Brass
@@ -45,6 +47,8 @@ public:
     void ResetMaxLoan(double ml);
     void ResetLoadRate(double lr);
     void ResetOwnsBank(double ob);
+
+    virtual ~BrassPlus() { cout << "delete BrassPlus with balance:" << Balance() << endl; }
 };
 
 #endif
