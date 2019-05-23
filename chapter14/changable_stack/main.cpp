@@ -6,7 +6,7 @@ const int charNums = 3;
 int main(void)
 {
     {
-        Stack<const char *> st;
+        Stack<const char *> st = Stack<const char*>();
 
         const char *contents[charNums] = {
             "1:hello",
@@ -16,7 +16,7 @@ int main(void)
         for (int i = 0; i < charNums; i++)
         {
             st.push(contents[i]);
-            // std::cout << stack <<std::endl;
+            std::cout << st.getTop() <<std::endl;
         }
     }
     return 0;
